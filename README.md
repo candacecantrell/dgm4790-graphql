@@ -1,6 +1,6 @@
 # GraphQL Server Example (SDL-first)
 
-This example shows how to implement an **GraphQL server (SDL-first) with Node.js** based on [Prisma Client](https://github.com/prisma/prisma2/blob/master/docs/prisma-client-js/api.md), [graphql-yoga](https://github.com/prisma/graphql-yoga) and [graphql-tools](https://www.apollographql.com/docs/graphql-tools/). It is based on a SQLite database, you can find the database file with some dummy data at [`./prisma/dev.db`](./prisma/dev.db).
+This example shows how to implement an **GraphQL server (SDL-first) with Node.js** based on [Prisma Client](https://github.com/prisma/prisma2/blob/master/docs/prisma-client-js/api.md), [apollo-server](https://www.npmjs.com/package/apollo-server) and the [nexus-prisma](https://github.com/prisma-labs/nexus-prisma) plugin. It is based on a PostGreSQL database running inside Docker.
 
 ## How to use
 
@@ -9,13 +9,13 @@ This example shows how to implement an **GraphQL server (SDL-first) with Node.js
 Clone this repository:
 
 ```
-git clone git@github.com:prisma/prisma-examples.git --depth=1
+git clone https://github.com/thortek/dgm4790-graphql-server
 ```
 
 Install npm dependencies:
 
 ```
-cd prisma-examples/javascript/graphql-sdl-first
+cd graphql-sdl-first
 npm install
 ```
 
