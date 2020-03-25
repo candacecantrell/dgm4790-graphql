@@ -19,6 +19,9 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  CourseWhereUniqueInput: { // input type
+    id?: string | null; // String
+  }
 }
 
 export interface NexusGenEnums {
@@ -26,6 +29,7 @@ export interface NexusGenEnums {
 
 export interface NexusGenRootTypes {
   Course: prisma.Course;
+  Mutation: {};
   Query: {};
   String: string;
   Int: number;
@@ -36,6 +40,7 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  CourseWhereUniqueInput: NexusGenInputs['CourseWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
@@ -49,6 +54,11 @@ export interface NexusGenFieldTypes {
     termsOffered: string; // String!
     updatedAt: any; // DateTime!
   }
+  Mutation: { // field return type
+    createCourse: NexusGenRootTypes['Course']; // Course!
+    deleteOneCourse: NexusGenRootTypes['Course'] | null; // Course
+    updateCourse: NexusGenRootTypes['Course']; // Course!
+  }
   Query: { // field return type
     Course: NexusGenRootTypes['Course'] | null; // Course
     Courses: NexusGenRootTypes['Course'][]; // [Course!]!
@@ -56,6 +66,26 @@ export interface NexusGenFieldTypes {
 }
 
 export interface NexusGenArgTypes {
+  Mutation: {
+    createCourse: { // args
+      courseCode: string; // String!
+      defaultCredits?: string | null; // String
+      description?: string | null; // String
+      name: string; // String!
+      termsOffered?: string | null; // String
+    }
+    deleteOneCourse: { // args
+      where: NexusGenInputs['CourseWhereUniqueInput']; // CourseWhereUniqueInput!
+    }
+    updateCourse: { // args
+      courseCode?: string | null; // String
+      defaultCredits?: string | null; // String
+      description?: string | null; // String
+      id?: string | null; // ID
+      name?: string | null; // String
+      termsOffered?: string | null; // String
+    }
+  }
   Query: {
     Course: { // args
       id?: string | null; // ID
@@ -71,9 +101,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Course" | "Query";
+export type NexusGenObjectNames = "Course" | "Mutation" | "Query";
 
-export type NexusGenInputNames = never;
+export type NexusGenInputNames = "CourseWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
