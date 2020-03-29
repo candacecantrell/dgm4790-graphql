@@ -1,0 +1,352 @@
+{
+        "cassette": [{
+        "title": {
+            "text": "Kid Krow"
+        },
+            "artist": {
+                "text": "Conan Gray"
+            },
+            "price": {
+                "text": "15.98"
+            },
+            "genre": {
+                "text": "pop"
+            }
+    },
+            {
+            "title": {
+                "text": "NFR!"
+            },
+            "artist": {
+                "text": "Lana Del Rey"
+            },
+            "price": {
+                "text": "16.98"
+            },
+            "genre": {
+                "text": "dream pop"
+            }
+    },
+    {
+        "title": {
+            "text": "Lover"
+        },
+        "artist": {
+            "text": "Taylor Swift"
+        },
+        "price": {
+            "text": "19.98"
+        },
+        "genre": {
+            "text": "pop"
+        }
+},
+{
+    "title": {
+        "text": "Cry"
+    },
+    "artist": {
+        "text": "Cigarettes After Sex"
+    },
+    "price": {
+        "text": "10.98"
+    },
+    "genre": {
+        "text": "dream pop"
+    }
+},
+{
+    "title": {
+        "text": "Rare"
+    },
+    "artist": {
+        "text": "Selena Gomez"
+    },
+    "price": {
+        "text": "16.98"
+    },
+    "genre": {
+        "text": "pop"
+    }
+},
+{
+    "title": {
+        "text": "Yeezus"
+    },
+    "artist": {
+        "text": "Kanye West"
+    },
+    "price": {
+        "text": "12.98"
+    },
+    "genre": {
+        "text": "hip hop"
+    }
+},
+{
+    "title": {
+        "text": "Before Love Came to Kill Us"
+    },
+    "artist": {
+        "text": "Jessie Reyez"
+    },
+    "price": {
+        "text": "16.98"
+    },
+    "genre": {
+        "text": "Contemporary R&B"
+    }
+},
+{
+    "title": {
+        "text": "Champion"
+    },
+    "artist": {
+        "text": "Bishop Briggs"
+    },
+    "price": {
+        "text": "14.98"
+    },
+    "genre": {
+        "text": "indie rock"
+    }
+},
+{
+    "title": {
+        "text": "IGOR"
+    },
+    "artist": {
+        "text": "Tyler, The Creator"
+    },
+    "price": {
+        "text": "15.98"
+    },
+    "genre": {
+        "text": "hip hop"
+    }
+},
+{
+    "title": {
+        "text": "Greatest Hits"
+    },
+    "artist": {
+        "text": "Aerosmith"
+    },
+    "price": {
+        "text": "7.49"
+    },
+    "genre": {
+        "text": "hard rock"
+    }
+},
+{
+    "title": {
+        "text": "White Blood Cells"
+    },
+    "artist": {
+        "text": "White Stripes"
+    },
+    "price": {
+        "text": "9.98"
+    },
+    "genre": {
+        "text": "garage rock"
+    }
+},
+{
+    "title": {
+        "text": "Girls Girls Girls"
+    },
+    "artist": {
+        "text": "Motley Crue"
+    },
+    "price": {
+        "text": "16.98"
+    },
+    "genre": {
+        "text": "heavy metal"
+    }
+},
+{
+    "title": {
+        "text": "2001"
+    },
+    "artist": {
+        "text": "Dr. Dre"
+    },
+    "price": {
+        "text": "15.12"
+    },
+    "genre": {
+        "text": "hip hop"
+    }
+},
+{
+    "title": {
+        "text": "Bleach"
+    },
+    "artist": {
+        "text": "Nirvana"
+    },
+    "price": {
+        "text": "7.96"
+    },
+    "genre": {
+        "text": "grunge"
+    }
+},
+{
+    "title": {
+        "text": "Reputation"
+    },
+    "artist": {
+        "text": "Taylor Swift"
+    },
+    "price": {
+        "text": "34.99"
+    },
+    "genre": {
+        "text": "pop"
+    }
+},
+{
+    "title": {
+        "text": "2Pacalypse Now"
+    },
+    "artist": {
+        "text": "2Pac"
+    },
+    "price": {
+        "text": "11.40"
+    },
+    "genre": {
+        "text": "hip hop"
+    }
+},
+{
+    "title": {
+        "text": "The Underrated Youth"
+    },
+    "artist": {
+        "text": "Yungblud"
+    },
+    "price": {
+        "text": "25.67"
+    },
+    "genre": {
+        "text": "alternative rock"
+    }
+},
+{
+    "title": {
+        "text": "Decca Tapes"
+    },
+    "artist": {
+        "text": "The Beatles"
+    },
+    "price": {
+        "text": "16.99"
+    },
+    "genre": {
+        "text": "rock"
+    }
+},
+{
+    "title": {
+        "text": "And Justice For None"
+    },
+    "artist": {
+        "text": "Five Finger Death Punch"
+    },
+    "price": {
+        "text": "9.64"
+    },
+    "genre": {
+        "text": "heavy metal"
+    }
+},
+{
+    "title": {
+        "text": "Back in Black"
+    },
+    "artist": {
+        "text": "AC/DC"
+    },
+    "price": {
+        "text": "29.99"
+    },
+    "genre": {
+        "text": "hard rock"
+    }
+},
+{
+    "title": {
+        "text": "Oh, Inverted World"
+    },
+    "artist": {
+        "text": "The Shins"
+    },
+    "price": {
+        "text": "18.49"
+    },
+    "genre": {
+        "text": "indie rock"
+    }
+},
+{
+    "title": {
+        "text": "Purple Rain"
+    },
+    "artist": {
+        "text": "Prince"
+    },
+    "price": {
+        "text": "19.98"
+    },
+    "genre": {
+        "text": "rock"
+    }
+},
+{
+    "title": {
+        "text": "Blurryface"
+    },
+    "artist": {
+        "text": "Twenty One Pilots"
+    },
+    "price": {
+        "text": "18.98"
+    },
+    "genre": {
+        "text": "pop rock"
+    }
+},
+{
+    "title": {
+        "text": "The Stranger"
+    },
+    "artist": {
+        "text": "Billy Joel"
+    },
+    "price": {
+        "text": "7.77"
+    },
+    "genre": {
+        "text": "soft rock"
+    }
+},
+{
+    "title": {
+        "text": "Classic Queen"
+    },
+    "artist": {
+        "text": "Queen"
+    },
+    "price": {
+        "text": "29.98"
+    },
+    "genre": {
+        "text": "rock"
+    }
+}]
+}

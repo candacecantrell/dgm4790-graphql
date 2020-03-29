@@ -4,50 +4,46 @@ export const Mutation = mutationType({
     name: 'Mutation',
     definition(t) {
 
-        t.crud.deleteOneCourse()
+        t.crud.deleteOneCassette()
         
-        t.field('createCourse', {
-            type: 'Course',
+        t.field('createCassette', {
+            type: 'Cassette',
             args: {
-                name: stringArg({ nullable: false }),
-                description: stringArg(),
-                defaultCredits: stringArg(),
-                courseCode: stringArg({ nullable: false }),
-                termsOffered: stringArg(),
+                title: stringArg({ nullable: false }),
+                price: stringArg(),
+                artist: stringArg(),
+                genre: stringArg({ nullable: false }),
             },
-            resolve: (parent, { name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
-                return ctx.prisma.course.create({
+            resolve: (parent, { title, price, artist, genre }, ctx) => {
+                return ctx.prisma.cassette.create({
                     data: {
-                        name,
-                        description,
-                        defaultCredits,
-                        courseCode,
-                        termsOffered,
+                        title,
+                        price,
+                        artist,
+                        genre
                     }
                 })
             }
         })
 
-        t.field('updateCourse', {
-            type: 'Course',
+        t.field('updateCassette', {
+            type: 'Cassette',
             args: { id: idArg(),
-                name: stringArg(),
-                description: stringArg(),
-                defaultCredits: stringArg(),
-                courseCode: stringArg(),
-                termsOffered: stringArg(),
+                title: stringArg(),
+                price: stringArg(),
+                artist: stringArg(),
+                genre: stringArg(),
             },
-            resolve: (parent, { id, name, description, defaultCredits, courseCode, termsOffered }, ctx) => {
-                return ctx.prisma.course.update({
+            resolve: (parent, { title, price, artist, genre }, ctx) => {
+                return ctx.prisma.cassette.update({
                     where: {
                         id
                     },
                     data: {
-                        name,
-                        description,
-                        defaultCredits,
-                        courseCode,
-                        termsOffered,
+                        title,
+                        price,
+                        artist,
+                        genre
                     }
                 })
             }

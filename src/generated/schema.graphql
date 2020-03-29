@@ -2,30 +2,29 @@
 ### Do not make changes to this file directly
 
 
-type Course {
-  courseCode: String!
+type Cassette {
+  artist: String!
   createdAt: DateTime!
-  defaultCredits: String!
-  description: String!
+  genre: String!
   id: String!
-  name: String!
-  termsOffered: String!
+  price: String!
+  title: String!
   updatedAt: DateTime!
 }
 
-input CourseWhereUniqueInput {
+input CassetteWhereUniqueInput {
   id: String
 }
 
 scalar DateTime
 
 type Mutation {
-  createCourse(courseCode: String!, defaultCredits: String, description: String, name: String!, termsOffered: String): Course!
-  deleteOneCourse(where: CourseWhereUniqueInput!): Course
-  updateCourse(courseCode: String, defaultCredits: String, description: String, id: ID, name: String, termsOffered: String): Course!
+  createCassette(artist: String, genre: String!, price: String, title: String!): Cassette!
+  deleteOneCassette(where: CassetteWhereUniqueInput!): Cassette
+  updateCassette(artist: String, genre: String, id: ID, price: String, title: String): Cassette!
 }
 
 type Query {
-  Course(id: ID): Course
-  Courses(searchString: String): [Course!]!
+  Cassette(id: ID): Cassette
+  Cassettes(searchString: String): [Cassette!]!
 }

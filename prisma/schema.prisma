@@ -7,13 +7,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Course {
+model Cassette {
   id             String   @default(cuid()) @id
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
-  name           String
-  description    String
-  defaultCredits String
-  courseCode     String
-  termsOffered   String
+  title     String
+  genre     String
+  price     String
+  artist    String
 }

@@ -1,19 +1,18 @@
 import { objectType } from 'nexus'
 
-const Course = objectType({
-  name: 'Course',
+const Cassette = objectType({
+  name: 'Cassette',
   definition(t) {
     t.model.id()
     t.model.createdAt()
     t.model.updatedAt()
-    t.model.name()
-    t.model.description()
-    t.model.defaultCredits()
-    t.model.courseCode()
-    t.model.termsOffered()
+    t.model.title()
+    t.model.price()
+    t.model.artist()
+    t.model.genre()
   }
 })
 
 export const Models = [
-  Course
+  Cassette
 ]

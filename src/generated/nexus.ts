@@ -19,7 +19,7 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  CourseWhereUniqueInput: { // input type
+  CassetteWhereUniqueInput: { // input type
     id?: string | null; // String
   }
 }
@@ -28,7 +28,7 @@ export interface NexusGenEnums {
 }
 
 export interface NexusGenRootTypes {
-  Course: prisma.Course;
+  Cassette: prisma.Cassette;
   Mutation: {};
   Query: {};
   String: string;
@@ -40,57 +40,54 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
-  CourseWhereUniqueInput: NexusGenInputs['CourseWhereUniqueInput'];
+  CassetteWhereUniqueInput: NexusGenInputs['CassetteWhereUniqueInput'];
 }
 
 export interface NexusGenFieldTypes {
-  Course: { // field return type
-    courseCode: string; // String!
+  Cassette: { // field return type
+    artist: string; // String!
     createdAt: any; // DateTime!
-    defaultCredits: string; // String!
-    description: string; // String!
+    genre: string; // String!
     id: string; // String!
-    name: string; // String!
-    termsOffered: string; // String!
+    price: string; // String!
+    title: string; // String!
     updatedAt: any; // DateTime!
   }
   Mutation: { // field return type
-    createCourse: NexusGenRootTypes['Course']; // Course!
-    deleteOneCourse: NexusGenRootTypes['Course'] | null; // Course
-    updateCourse: NexusGenRootTypes['Course']; // Course!
+    createCassette: NexusGenRootTypes['Cassette']; // Cassette!
+    deleteOneCassette: NexusGenRootTypes['Cassette'] | null; // Cassette
+    updateCassette: NexusGenRootTypes['Cassette']; // Cassette!
   }
   Query: { // field return type
-    Course: NexusGenRootTypes['Course'] | null; // Course
-    Courses: NexusGenRootTypes['Course'][]; // [Course!]!
+    Cassette: NexusGenRootTypes['Cassette'] | null; // Cassette
+    Cassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
   }
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createCourse: { // args
-      courseCode: string; // String!
-      defaultCredits?: string | null; // String
-      description?: string | null; // String
-      name: string; // String!
-      termsOffered?: string | null; // String
+    createCassette: { // args
+      artist?: string | null; // String
+      genre: string; // String!
+      price?: string | null; // String
+      title: string; // String!
     }
-    deleteOneCourse: { // args
-      where: NexusGenInputs['CourseWhereUniqueInput']; // CourseWhereUniqueInput!
+    deleteOneCassette: { // args
+      where: NexusGenInputs['CassetteWhereUniqueInput']; // CassetteWhereUniqueInput!
     }
-    updateCourse: { // args
-      courseCode?: string | null; // String
-      defaultCredits?: string | null; // String
-      description?: string | null; // String
+    updateCassette: { // args
+      artist?: string | null; // String
+      genre?: string | null; // String
       id?: string | null; // ID
-      name?: string | null; // String
-      termsOffered?: string | null; // String
+      price?: string | null; // String
+      title?: string | null; // String
     }
   }
   Query: {
-    Course: { // args
+    Cassette: { // args
       id?: string | null; // ID
     }
-    Courses: { // args
+    Cassettes: { // args
       searchString?: string | null; // String
     }
   }
@@ -101,9 +98,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "Course" | "Mutation" | "Query";
+export type NexusGenObjectNames = "Cassette" | "Mutation" | "Query";
 
-export type NexusGenInputNames = "CourseWhereUniqueInput";
+export type NexusGenInputNames = "CassetteWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
