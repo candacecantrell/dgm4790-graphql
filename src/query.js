@@ -1,4 +1,4 @@
-import { idArg, queryType, stringArg } from 'nexus'
+import { idArg, queryType, stringArg, floatArg, filter} from 'nexus'
 
 export const Query = queryType({
   definition(t) {
@@ -28,6 +28,22 @@ export const Query = queryType({
               { genre: { contains: searchString }}
             ],
           },
+        })
+      }
+    })
+
+    t.list.field('discountCassettes', {
+      type: 'Cassette',
+      args: {
+        sale: floatArg({ nullable: true}),
+      },
+      resolve: (parent, { sale }, ctx) => {
+        return ctx.prisma.cassette.findMany({
+          where: {
+            OR: [
+              { price: { price_lte: sale}}
+            ],
+        }
         })
       }
     })

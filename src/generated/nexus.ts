@@ -61,6 +61,7 @@ export interface NexusGenFieldTypes {
   Query: { // field return type
     Cassette: NexusGenRootTypes['Cassette'] | null; // Cassette
     Cassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
+    discountCassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
   }
 }
 
@@ -89,6 +90,9 @@ export interface NexusGenArgTypes {
     }
     Cassettes: { // args
       searchString?: string | null; // String
+    }
+    discountCassettes: { // args
+      sale?: number | null; // Float
     }
   }
 }
