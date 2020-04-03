@@ -1,4 +1,4 @@
-import { idArg, mutationType, stringArg } from 'nexus'
+import { idArg, mutationType, stringArg, floatArg } from 'nexus'
 
 export const Mutation = mutationType({
     name: 'Mutation',
@@ -10,7 +10,7 @@ export const Mutation = mutationType({
             type: 'Cassette',
             args: {
                 title: stringArg({ nullable: false }),
-                price: stringArg(),
+                price: floatArg(),
                 artist: stringArg(),
                 genre: stringArg({ nullable: false }),
             },

@@ -138,7 +138,7 @@
       "tag": "CreateField",
       "model": "Cassette",
       "field": "price",
-      "type": "String",
+      "type": "Float",
       "arity": "Required"
     },
     {

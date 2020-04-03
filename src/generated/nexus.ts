@@ -49,7 +49,7 @@ export interface NexusGenFieldTypes {
     createdAt: any; // DateTime!
     genre: string; // String!
     id: string; // String!
-    price: string; // String!
+    price: number; // Float!
     title: string; // String!
     updatedAt: any; // DateTime!
   }
@@ -61,7 +61,6 @@ export interface NexusGenFieldTypes {
   Query: { // field return type
     Cassette: NexusGenRootTypes['Cassette'] | null; // Cassette
     Cassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
-    discountCassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
   }
 }
 
@@ -70,7 +69,7 @@ export interface NexusGenArgTypes {
     createCassette: { // args
       artist?: string | null; // String
       genre: string; // String!
-      price?: string | null; // String
+      price?: number | null; // Float
       title: string; // String!
     }
     deleteOneCassette: { // args
@@ -89,10 +88,7 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
     }
     Cassettes: { // args
-      searchString?: string | null; // String
-    }
-    discountCassettes: { // args
-      sale?: number | null; // Float
+      priceHigh?: number | null; // Float
     }
   }
 }

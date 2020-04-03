@@ -13,6 +13,6 @@ model Cassette {
   updatedAt      DateTime @updatedAt
   title     String
   genre     String
-  price     String
+  price     Float
   artist    String
 }

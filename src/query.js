@@ -1,4 +1,4 @@
-import { idArg, queryType, stringArg, floatArg, filter} from 'nexus'
+import { idArg, queryType, stringArg, floatArg, filter, intArg} from 'nexus'
 
 export const Query = queryType({
   definition(t) {
@@ -32,21 +32,37 @@ export const Query = queryType({
       }
     })
 
-    t.list.field('discountCassettes', {
+    // t.list.field('Cassettes', {
+    //   type: 'Cassette',
+    //   // args: {
+    //   //   sale: floatArg({ nullable: true}),
+    //   // },
+    //   resolve: (parent, ctx) => {
+    //     return ctx.prisma.cassette.findMany({
+    //       where: {
+    //           price: { _lte: 10.00 }
+    //       // filter: { price: {$lte: sale}
+    //     },
+    //     })
+    //   }
+    // })
+    t.list.field( 'Cassettes', {
       type: 'Cassette',
       args: {
-        sale: floatArg({ nullable: true}),
+        priceHigh: floatArg({ nullable: true}),
       },
-      resolve: (parent, { sale }, ctx) => {
+      resolve: (parent, { priceHigh }, ctx) => {
         return ctx.prisma.cassette.findMany({
           where: {
             OR: [
-              { price: { price_lte: sale}}
+              { price: {lt: priceHigh}}
             ],
-        }
+          },
         })
       }
     })
 
-  }
+
+
+  } 
 })
