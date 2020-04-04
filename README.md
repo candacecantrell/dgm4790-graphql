@@ -149,8 +149,6 @@ mutation deleteOneCassette {
 
 > **Note**: Replace CASSETTE_ID with actual cassette id & price must added as be float type. 
 
-> **Note**: You need to replace the `__CASSETTE_ID__` placeholder with an actual `id` from a `Cassette` item. You can find one e.g. using the `allCAssettes` query.
-
 </Details>
 
 ### All of your source code will be properly uploaded to GitHub. Your ReadMe file will accurately describe your server install and run process and how to use the APIs
