@@ -107,7 +107,7 @@ query oneCassette {
 }
 ```
 
-At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
+### At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
 
 #### Create a new cassette
 
