@@ -1,3 +1,12 @@
+Prisma as your data modeling tool
+https://github.com/candacecantrell/dgm4790-graphql/blob/master/prisma/schema.prisma
+
+### Docker-based PostgreSQL, MySQL, or MongoDB as your data store
+### Your app will be deployable locally using Docker and will have seed data entered into the datastore.
+https://github.com/candacecantrell/dgm4790-graphql/blob/master/package.json
+
+# Steps to set up new GraphQL Server
+
 Clone this repository:
 
 ```
@@ -57,6 +66,7 @@ The schema that specifies the API operations of your GraphQL server is defined i
 Feel free to adjust any operation by adding or removing fields. The GraphQL Playground helps you with its auto-completion and query validation features.
 
 #### Retrieve all cassettes, title, artist, price, genre
+### At least 3 Query resolvers to get data from your server
 
 ```graphql
 query allCassettes {
@@ -70,44 +80,6 @@ query allCassettes {
 ```
 
 <Details><Summary><strong>See more API operations</strong></Summary>
-
-#### Create a new cassette
-
-```graphql
-mutation createCassette {
-  createCassette(title: "New cassette",
-    genre: "New genre",
-  artist: "New artist",
-  price: 19.00,
-}
-```
-
-#### Update a cassette
-
-```graphql
-mutation updateCassette {
-  updateCassette(id: __CASSETTE_ID__,
-    title: "Updated title",
-    artist: "Updated artist",
-    genre: "Updated genre",
-    price: 15.00,
-}
-```
-
-#### Delete a specific cassette by id
-
-```graphql
-mutation deleteOneCassette {
-  deleteOneCassette(where: {
-    id: __CASSETTE_ID__
-  }) {
-    id
-    title
-  }
-}
-```
-
-> **Note**: Replace CASSETTE_ID with actual cassette id & price must added as be float type. 
 
 #### Search genres & titles with searchstring
 
@@ -135,6 +107,54 @@ query oneCassette {
 }
 ```
 
+At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
+
+#### Create a new cassette
+
+```graphql
+mutation createCassette {
+  createCassette(title: "New cassette",
+    genre: "New genre",
+  artist: "New artist",
+  price: 19.00,
+}
+```
+
+#### Update a cassette
+
+```graphql
+mutation updateCassette {
+  updateCassette(id: __CASSETTE_ID__,
+    title: "Updated title",
+    artist: "Updated artist",
+    genre: "Updated genre",
+    price: 15.00,
+}
+```
+
+### At least 1 Mutation resolver allowing users to delete an item.Your datastore will contain at least 25 items
+
+#### Delete a specific cassette by id
+
+```graphql
+mutation deleteOneCassette {
+  deleteOneCassette(where: {
+    id: __CASSETTE_ID__
+  }) {
+    id
+    title
+  }
+}
+```
+
+> **Note**: Replace CASSETTE_ID with actual cassette id & price must added as be float type. 
+
 > **Note**: You need to replace the `__CASSETTE_ID__` placeholder with an actual `id` from a `Cassette` item. You can find one e.g. using the `allCAssettes` query.
 
 </Details>
+
+### All of your source code will be properly uploaded to GitHub. Your ReadMe file will accurately describe your server install and run process and how to use the APIs
+
+https://github.com/candacecantrell/dgm4790-graphql
+
+https://github.com/candacecantrell/dgm4790-graphql/blob/master/README.md
