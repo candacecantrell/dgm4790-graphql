@@ -5,8 +5,10 @@ export const Mutation = mutationType({
     definition(t) {
 
         t.crud.deleteOneCassette()
+        t.crud.updateOneCassette()
+        t.crud.createOneCassette()
         
-        t.field('createCassette', {
+        t.field('createCassette', { 
             type: 'Cassette',
             args: {
                 title: stringArg({ nullable: false }),
@@ -30,20 +32,20 @@ export const Mutation = mutationType({
             type: 'Cassette',
             args: { id: idArg(),
                 title: stringArg(),
-                price: stringArg(),
-                artist: stringArg(),
+                price: floatArg(),
+                artist: stringArg(), 
                 genre: stringArg(),
             },
-            resolve: (parent, { title, price, artist, genre }, ctx) => {
+            resolve: (parent, { id, title, price, artist, genre}, ctx) => {
                 return ctx.prisma.cassette.update({
                     where: {
                         id
-                    },
+                    }, 
                     data: {
                         title,
                         price,
                         artist,
-                        genre
+                        genre,
                     }
                 })
             }

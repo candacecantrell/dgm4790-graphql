@@ -14,8 +14,26 @@ export const Query = queryType({
         })
       }
     })
+    
 
     t.list.field('Cassettes', {
+      type: 'Cassette',
+      args: { 
+        searchString: stringArg({ nullable: true}),
+      },
+      resolve: (parent, { searchString }, ctx) => {
+        return ctx.prisma.cassette.findMany({
+          where: {
+            OR: [
+              { title: { contains: searchString }},
+              { genre: { contains: searchString }}
+            ],
+          },
+        })
+      }
+    })
+
+    t.list.field('searchCassettes', {
       type: 'Cassette',
       args: {
         searchString: stringArg({ nullable: true}),
@@ -46,7 +64,7 @@ export const Query = queryType({
     //     })
     //   }
     // })
-    t.list.field( 'Cassettes', {
+    t.list.field( 'priceCassettes', {
       type: 'Cassette',
       args: {
         priceHigh: floatArg({ nullable: true}),
@@ -61,8 +79,6 @@ export const Query = queryType({
         })
       }
     })
-
-
 
   } 
 })

@@ -12,6 +12,26 @@ type Cassette {
   updatedAt: DateTime!
 }
 
+input CassetteCreateInput {
+  artist: String!
+  createdAt: DateTime
+  genre: String!
+  id: String
+  price: Float!
+  title: String!
+  updatedAt: DateTime
+}
+
+input CassetteUpdateInput {
+  artist: String
+  createdAt: DateTime
+  genre: String
+  id: String
+  price: Float
+  title: String
+  updatedAt: DateTime
+}
+
 input CassetteWhereUniqueInput {
   id: String
 }
@@ -20,11 +40,15 @@ scalar DateTime
 
 type Mutation {
   createCassette(artist: String, genre: String!, price: Float, title: String!): Cassette!
+  createOneCassette(data: CassetteCreateInput!): Cassette!
   deleteOneCassette(where: CassetteWhereUniqueInput!): Cassette
-  updateCassette(artist: String, genre: String, id: ID, price: String, title: String): Cassette!
+  updateCassette(artist: String, genre: String, id: ID, price: Float, title: String): Cassette!
+  updateOneCassette(data: CassetteUpdateInput!, where: CassetteWhereUniqueInput!): Cassette
 }
 
 type Query {
   Cassette(id: ID): Cassette
-  Cassettes(priceHigh: Float): [Cassette!]!
+  Cassettes(searchString: String): [Cassette!]!
+  priceCassettes(priceHigh: Float): [Cassette!]!
+  searchCassettes(searchString: String): [Cassette!]!
 }

@@ -29,6 +29,11 @@ If you have an existing Docker container running and want to restart from scratc
 ```
 npm run nuke
 ```
+Launch Docker & Create new docker container
+
+```
+npm run launchDocker
+```
 
 Create a new database instance and migrate it by running the `createDB` npm script:
 
@@ -75,6 +80,7 @@ query allCassettes {
     artist
     price
     genre
+    id
   }
 }
 ```
@@ -85,7 +91,20 @@ query allCassettes {
 
 ```graphql
 query filterCassettes {
-  Cassette(searchString: "pop") {
+  searchCassettes(searchString: "pop") {
+    id
+    title
+    artist
+    genre
+    price
+  }
+}
+```
+#### search DB for Cassettes priced lower than specified amount
+
+```graphql
+query priceCassettes {
+  priceCassettes(priceHigh: 10.00) {
     id
     title
     artist
@@ -99,13 +118,16 @@ query filterCassettes {
 
 ```graphql
 query oneCassette {
-  Cassette(id: __CASSETTE_ID__) {
+  Cassette(id: "__CASSETTE_ID__") {
     title
     artist
+    price
+    genre
     id
   }
 }
 ```
+
 
 ### At least 2 Mutation resolvers allowing users to create, update, or upsert an item.
 
@@ -113,10 +135,20 @@ query oneCassette {
 
 ```graphql
 mutation createCassette {
-  createCassette(title: "New cassette",
+  createOneCassette(
+    data: {
+    title: "New cassette",
     genre: "New genre",
   artist: "New artist",
   price: 19.00,
+    }
+  ) {
+    id
+    title
+    artist
+    price
+    genre
+  }
 }
 ```
 
@@ -124,11 +156,18 @@ mutation createCassette {
 
 ```graphql
 mutation updateCassette {
-  updateCassette(id: __CASSETTE_ID__,
+  updateCassette(id: "__CASSETTE_ID__",
     title: "Updated title",
     artist: "Updated artist",
     genre: "Updated genre",
-    price: 15.00,
+    price: 15.00,)
+    {
+      id
+      title
+      artist
+      price
+      genre
+    }
 }
 ```
 
@@ -139,10 +178,13 @@ mutation updateCassette {
 ```graphql
 mutation deleteOneCassette {
   deleteOneCassette(where: {
-    id: __CASSETTE_ID__
+    id: "__CASSETTE_ID__"
   }) {
     id
     title
+    artist
+    price
+    genre
   }
 }
 ```

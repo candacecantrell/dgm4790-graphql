@@ -19,6 +19,24 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  CassetteCreateInput: { // input type
+    artist: string; // String!
+    createdAt?: any | null; // DateTime
+    genre: string; // String!
+    id?: string | null; // String
+    price: number; // Float!
+    title: string; // String!
+    updatedAt?: any | null; // DateTime
+  }
+  CassetteUpdateInput: { // input type
+    artist?: string | null; // String
+    createdAt?: any | null; // DateTime
+    genre?: string | null; // String
+    id?: string | null; // String
+    price?: number | null; // Float
+    title?: string | null; // String
+    updatedAt?: any | null; // DateTime
+  }
   CassetteWhereUniqueInput: { // input type
     id?: string | null; // String
   }
@@ -40,6 +58,8 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  CassetteCreateInput: NexusGenInputs['CassetteCreateInput'];
+  CassetteUpdateInput: NexusGenInputs['CassetteUpdateInput'];
   CassetteWhereUniqueInput: NexusGenInputs['CassetteWhereUniqueInput'];
 }
 
@@ -55,12 +75,16 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     createCassette: NexusGenRootTypes['Cassette']; // Cassette!
+    createOneCassette: NexusGenRootTypes['Cassette']; // Cassette!
     deleteOneCassette: NexusGenRootTypes['Cassette'] | null; // Cassette
     updateCassette: NexusGenRootTypes['Cassette']; // Cassette!
+    updateOneCassette: NexusGenRootTypes['Cassette'] | null; // Cassette
   }
   Query: { // field return type
     Cassette: NexusGenRootTypes['Cassette'] | null; // Cassette
     Cassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
+    priceCassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
+    searchCassettes: NexusGenRootTypes['Cassette'][]; // [Cassette!]!
   }
 }
 
@@ -72,6 +96,9 @@ export interface NexusGenArgTypes {
       price?: number | null; // Float
       title: string; // String!
     }
+    createOneCassette: { // args
+      data: NexusGenInputs['CassetteCreateInput']; // CassetteCreateInput!
+    }
     deleteOneCassette: { // args
       where: NexusGenInputs['CassetteWhereUniqueInput']; // CassetteWhereUniqueInput!
     }
@@ -79,8 +106,12 @@ export interface NexusGenArgTypes {
       artist?: string | null; // String
       genre?: string | null; // String
       id?: string | null; // ID
-      price?: string | null; // String
+      price?: number | null; // Float
       title?: string | null; // String
+    }
+    updateOneCassette: { // args
+      data: NexusGenInputs['CassetteUpdateInput']; // CassetteUpdateInput!
+      where: NexusGenInputs['CassetteWhereUniqueInput']; // CassetteWhereUniqueInput!
     }
   }
   Query: {
@@ -88,7 +119,13 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
     }
     Cassettes: { // args
+      searchString?: string | null; // String
+    }
+    priceCassettes: { // args
       priceHigh?: number | null; // Float
+    }
+    searchCassettes: { // args
+      searchString?: string | null; // String
     }
   }
 }
@@ -100,7 +137,7 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "Cassette" | "Mutation" | "Query";
 
-export type NexusGenInputNames = "CassetteWhereUniqueInput";
+export type NexusGenInputNames = "CassetteCreateInput" | "CassetteUpdateInput" | "CassetteWhereUniqueInput";
 
 export type NexusGenEnumNames = never;
 
