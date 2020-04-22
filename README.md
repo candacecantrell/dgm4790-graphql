@@ -74,7 +74,7 @@ Feel free to adjust any operation by adding or removing fields. The GraphQL Play
 ### At least 3 Query resolvers to get data from your server
 
 ```graphql
-query allCassettes {
+query allCassettes { 
   Cassettes {
     title
     artist
