@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:docker@localhost:5432/pg-docker?schema=public"
+  url      = "postgresql://postgres:docker@localhost:5432/pgdocker-cassettes?schema=public"
 }
 
 generator client {

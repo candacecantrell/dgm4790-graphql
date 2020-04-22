@@ -21,7 +21,7 @@
         "source": "db"
       },
       "argument": "url",
-      "value": "\"postgresql://postgres:docker@localhost:5432/pg-docker?schema=public\""
+      "value": "\"postgresql://postgres:docker@localhost:5432/pgdocker-cassettes?schema=public\""
     },
     {
       "tag": "CreateModel",
