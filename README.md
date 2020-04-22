@@ -10,13 +10,13 @@ https://github.com/candacecantrell/dgm4790-graphql/blob/master/package.json
 Clone this repository:
 
 ```
-git clone https://github.com/thortek/dgm4790-graphql-server
+git clone https://github.com/candacecantrell/dgm4790-graphql
 ```
 
 Change into project's root directory and install:
 
 ```
-cd dgm4790-graphql-server
+cd dgm4790-graphql
 npm install
 ```
 
