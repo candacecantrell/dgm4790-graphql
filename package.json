@@ -1,8 +1,8 @@
 {
   "name": "javascript-graphql",
   "scripts": {
-    "nuke": "docker stop pg-data && docker rm pg-data && docker volume rm pgdata && rm -rf prisma/migrations",
-    "launchDocker": "docker run --name pg-data -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v pgdata:/var/lib/postgresql/data postgres:latest",
+    "nuke": "docker stop pgdocker-cassettes && docker rm pgdocker-cassettes && docker volume rm pg-data && rm -rf prisma/migrations",
+    "launchDocker": "docker run --name pgdocker-cassettes -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v pg-data:/var/lib/postgresql/data postgres:latest",
     "createDB": "npx prisma2 migrate save --name 'init' --experimental && npx prisma2 migrate up --experimental",
     "generate": "npx prisma2 generate",
     "postinstall": "npm -s run generate",
